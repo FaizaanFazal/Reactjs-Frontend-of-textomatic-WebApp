@@ -1,13 +1,19 @@
 import React from 'react'
 import Footer from '../components/footer/Footer'
+import Toolsheader from '../components/headers/Toolsheader'
 import Navbar from '../components/navbar/Navbar'
-import Userdashboard from '../components/userdashboard/UserDashboard'
+import Toolsoverview from '../components/tools/Toolsoverview'
+
 
 export default function UserDashboard() {
   return (
     <>
+      <header className='navzero'>
         <Navbar/>
-        <Userdashboard/>
+        </header>
+      
+        <Toolsheader/>
+        <Toolsoverview/>
         <Footer/>
     </>
   )

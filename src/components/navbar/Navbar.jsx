@@ -1,7 +1,7 @@
 import React from 'react'
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import thinker from "../../assets/thinker-28741_1280.png"
+
 import { AuthContext } from "../../context/AuthContext"
 
 export default function Navbar() {
@@ -13,8 +13,8 @@ export default function Navbar() {
   }
 
   return (
-    <header>
-      <div className="container-fluid p-0">
+    
+      <div className="container-fluid p-0 ">
         <nav className="navbar navbar-expand-lg">
           <Link className="navbar-brand" to="index.html"> TEXTOMATIC</Link>
           <button
@@ -30,7 +30,7 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="mr-auto"></div>
-            <ul className="navbar-nav">
+            <ul className="navbar-nav align-items-center">
               <li className="nav-item active">
                 <Link className="nav-link" to="/"
                   >HOME
@@ -85,23 +85,7 @@ export default function Navbar() {
           </div>
         </nav>
       </div>
-      <div className="container text-center">
-        <div className="row">
-          <div className="col-md-7 col-sm-12 text-white">
-            <h1>Your thoughts in words</h1>
-            <p>
-              Say exactly what you mean through clear, compelling and authentic
-              writing.
-            </p>
-            <button className="btn btn-light px-5 py-2 primary-btn bg-warning">
-              Add to Chrome it's free
-            </button>
-          </div>
-          <div className="col-md-5 col-sm-12 h-25">
-            <img src={thinker} alt="Book" />
-          </div>
-        </div>
-      </div>
-    </header>
+      
+   
   )
 }
