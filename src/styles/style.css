@@ -592,7 +592,7 @@ svg {
     width: 100%;
     background-color: transparent;
     z-index: 1000;
-
+    background-color:rgb(128, 2, 187); ;
   }
   .toolscont{
     position: relative;

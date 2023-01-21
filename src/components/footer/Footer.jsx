@@ -8,7 +8,7 @@ export default function Footer() {
         <div class="col-md-5 col-sm-5">
           <h4 class="text-light">About us</h4>
           <p class="text-muted">
-            Textomatic was built by Air University. Our goal is to
+            Textomatic was built by Air University students. Our goal is to
             revolutionize the way we read and write. We design advanced AI
             tools and language models that understand the context and
             semantics of written text. These models are what set Textomatic
