@@ -81,8 +81,9 @@ export default function Analyzertool() {
     <button>Analyze </button>
 
               </div>
+               {/* data visualization  here */}
               <div className='row text-center'>
-                {/* data visualization  here */}
+               
                  
                   <div className='col-sm-6 mx-auto'>
       <VictoryChart

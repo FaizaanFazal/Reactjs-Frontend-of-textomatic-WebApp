@@ -1,17 +1,17 @@
 import React from 'react'
-import Navbar from '../components/navbar/Navbar'
 import Footer from '../components/footer/Footer'
-import Analyzertool from '../components/tools/Analyzertool'
+import Navbar from '../components/navbar/Navbar'
+import { Datacleaning } from '../components/tools/Datacleaning'
 
 
-export default function AnalysisPage() {
+export default function Datacleaningpage() {
   return (
     <div>
        <header className='navzero'>
         <Navbar/>
         </header>
         <br/>
-        <Analyzertool/>
+        <Datacleaning/>
         <Footer/>
     </div>
   )

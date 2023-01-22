@@ -7,7 +7,7 @@ import { axiosInstance } from '../../config';
 export const Datacleaning = () => {
 
     const [file, setFile] = useState();
-    const [result, setResult] = useState(null);
+    const [filepath, setFilepath] = useState(null);
     const [fileName, setFileName] = useState("");
     //keep file name and file on change
     const saveFile = (e) => {
@@ -22,24 +22,99 @@ export const Datacleaning = () => {
         formData.append("fileName", fileName);
         try {
           const res= await axiosInstance.post("/Datacleaning/upload",formData)
-          console.log("response ayaa g ",res.data.output);
-          setResult(res.data.output)
+          console.log("response ayaa g ",res.data.toString());
+          setFilepath(res.data.toString())
         } catch (ex) {
           console.log(ex);
-          setResult(ex)
+          setFilepath(ex)
         }
+      };
+      
+      const handleDownload = async () => {
+        axios({
+          url: 'http://localhost:8081/server/download',
+          method: 'GET',
+          params: { filepath },
+          responseType: 'blob',
+        }).then(response => {
+          const url = window.URL.createObjectURL(new Blob([response.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', 'file.txt');
+          document.body.appendChild(link);
+          link.click();
+        });
+
       };
 
   return (
     <>
-    <div className='text-center'>
+    <div className='container text-black mb-5 text-center'>
+    <br/>
+    <br/>
+    <br/>
 
-        <h3>datacleaning tool</h3>
-        <input type="file" onChange={saveFile} />
-          <button onClick={uploadFile}>Upload</button>
-          <div>Output</div>
-          {result ? <div>{result}</div>:<div>result:</div>}
+    <h3 className='text-center mt-4 mb-5'>Data Cleaner</h3>
+    <div className='bordergraylight text-center'>
+    <div>
+    <input type="file" onChange={saveFile} />
     </div>
+    <div className='row m-2'>
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox"> Apply Binary</label>
+               
+            </div>
+      </div>
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox"> TFC</label>
+               
+            </div>
+      </div>
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox">LTC</label>
+               
+            </div>
+      </div>
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox"> EtC</label>
+               
+            </div>
+      </div>
+    </div>
+    <button onClick={uploadFile}>Apply</button>    
+    
+    <div>{filepath}</div>
+          {filepath ? 
+            <button onClick={handleDownload}>Download</button>
+         
+          :<div>result:</div>}
+    </div>
+    </div>
+    
 
 
     </>

@@ -14,7 +14,7 @@ import UserSignup from './pages/UserSignup'
 import AnalysisPage from './pages/AnalysisPage'
 import { useContext } from "react"
 import { AuthContext } from "./context/AuthContext"
-import  {Datacleaning}  from './components/tools/Datacleaning'
+import  Datacleaningpage  from './pages/Datacleaningpage'
 
 
 export default function App() {
@@ -44,7 +44,7 @@ export default function App() {
           <Route  path='/userDashboard' element={<UserDashboard/>} />
           <Route  path='/userLogin' element={<UserLogin/>} />
           <Route  path='/userSignup' element={<UserSignup/>} />
-          <Route  path='/datacleaning' element={<Datacleaning/>} /> 
+          <Route  path='/datacleaning' element={<Datacleaningpage/>} /> 
           <Route  path='/analysistool' element={<AnalysisPage/>} />   
           
         </Routes>
