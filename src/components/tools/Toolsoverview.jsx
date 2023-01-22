@@ -52,7 +52,7 @@ export default function Toolsoverview() {
     <div className='container'>
 
     <div className=' row mx-auto bordergraylight'>
-        <div className='col-sm-8'> text headings paragraphs etc</div>
+        <div className='col-sm-8'> text headingsgghgjh paragraphs etc</div>
         <div className='col-sm-4 order-sm-1'> img</div>
     </div>
 
