@@ -7,8 +7,9 @@ import { axiosInstance } from '../../config';
 export const Datacleaning = () => {
 
     const [file, setFile] = useState();
-    const [filepath, setFilepath] = useState(null);
+    const [filepath, setFilepath] = useState("");
     const [fileName, setFileName] = useState("");
+    let p='';
     //keep file name and file on change
     const saveFile = (e) => {
         setFile(e.target.files[0]);
@@ -22,8 +23,11 @@ export const Datacleaning = () => {
         formData.append("fileName", fileName);
         try {
           const res= await axiosInstance.post("/Datacleaning/upload",formData)
-          console.log("response ayaa g ",res.data.toString());
-          setFilepath(res.data.toString())
+          p = res.data.toString();
+          p=p.replace(/(\r\n|\n|\r)/gm, "");
+          console.log("response ayaa g ",p);
+          
+          setFilepath(p)
         } catch (ex) {
           console.log(ex);
           setFilepath(ex)
@@ -78,7 +82,31 @@ export const Datacleaning = () => {
                         <input type="checkbox" aria-label="Checkbox for following text input" />
                    </div>
                   </div>
-                  <label  class="form-control" aria-label="Text input with checkbox"> TFC</label>
+                  <label  class="form-control" aria-label="Text input with checkbox"> Entropy</label>
+               
+            </div>
+      </div>
+
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox"> TFC-Term Frequency Collection</label>
+               
+            </div>
+      </div>
+
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox">LTC-Length Term Frequency</label>
                
             </div>
       </div>
@@ -89,18 +117,7 @@ export const Datacleaning = () => {
                         <input type="checkbox" aria-label="Checkbox for following text input" />
                    </div>
                   </div>
-                  <label  class="form-control" aria-label="Text input with checkbox">LTC</label>
-               
-            </div>
-      </div>
-      <div className='col-sm-4 col-md-3'>
-      <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <input type="checkbox" aria-label="Checkbox for following text input" />
-                   </div>
-                  </div>
-                  <label  class="form-control" aria-label="Text input with checkbox"> EtC</label>
+                  <label  class="form-control" aria-label="Text input with checkbox">TFIDF-Term Frequency Inverse Document</label>
                
             </div>
       </div>
