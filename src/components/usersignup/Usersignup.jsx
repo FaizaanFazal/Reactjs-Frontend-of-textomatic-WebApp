@@ -39,7 +39,7 @@ const handleClick= async (e)=>{
    try {
    await axiosInstance.post("/User/register",credentials);
     if(!toast.isActive(toastId.current)) {
-      toastId.current = toast.success("Project added successfully", {position: toast.POSITION.TOP_CENTER});
+      toastId.current = toast.success("Resgistration Successful", {position: toast.POSITION.TOP_CENTER});
       navigate('/userLogin')
     }
    } catch (error) {
@@ -52,6 +52,7 @@ const handleClick= async (e)=>{
   return (
     <> 
     <br/><br/>
+    <ToastContainer/>
     <div class="ccontainerr mt-5 pt-5">
     <form action="#">
       <div class="title">REGISTER YOURSELF WITH TEXTOMATIC</div>

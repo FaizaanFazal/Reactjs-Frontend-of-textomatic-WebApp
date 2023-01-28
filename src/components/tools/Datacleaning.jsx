@@ -1,18 +1,32 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import axios from 'axios';
 import { axiosInstance } from '../../config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const Datacleaning = () => {
 
     const [file, setFile] = useState();
     const [opts,setOpts]=useState([]);
-    const [pathslist,setPathslist]=useState({})
+    const [pathslist,setPathslist]=useState([])// to store resultant paths
+    const [locallist,setLocallist]=useState(pathslist)// to render the above path list by using useEffect
     const [filepath, setFilepath] = useState("");
     const [fileName, setFileName] = useState("");
     let p='';
  
+
+    //toast appearance
+    // toast.success("Great Success !", {
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // });
     //upload file
     const UploadNow=async()=>{
       const formData = new FormData();
@@ -24,10 +38,9 @@ export const Datacleaning = () => {
         p=p.replace(/(\r\n|\n|\r)/gm, "");
         p=p.replace(/\\/g, '/');
         console.log("response was :",p);
-        
+        toast('File uploaded succesfully');
         setFilepath(p)
-        console.log(filepath);
-      
+
       } catch (ex) {
         console.log(ex);
       }
@@ -63,7 +76,8 @@ export const Datacleaning = () => {
                 console.log("aya"+res.data)
                p=p.replace(/(\r\n|\n|\r)/gm, "");
           
-            setPathslist({ ...pathslist, [item]: p });
+            setPathslist(prevList => [...prevList, {  [item]: p }])
+          //  setPathslist({ ...pathslist, [item]: p });
           }
             )
             
@@ -77,11 +91,12 @@ export const Datacleaning = () => {
        
       };
       
-      const handleDownload = async () => {
+      const handleDownload = async (e) => {
+        let downloadpath=e.target.value;
         axios({
           url: 'http://localhost:8081/server/download',
           method: 'GET',
-          params: { filepath },
+          params: { downloadpath },
           responseType: 'blob',
         }).then(response => {
           const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -93,6 +108,9 @@ export const Datacleaning = () => {
         });
 
       };
+      useEffect(()=>{
+          setLocallist(pathslist)
+      },[pathslist])
 
   return (
     <>
@@ -100,12 +118,13 @@ export const Datacleaning = () => {
     <br/>
     <br/>
     <br/>
+    <ToastContainer />
 
     <h3 className='text-center mt-4 mb-5'>Data Cleaner</h3>
     <div className='bordergraylight text-center'>
     <div>
     <input type="file" onChange={saveFile} />
-    <button className="btn btn-outline-primary rounded-pill px-5" onClick={UploadNow}>Upload</button>   
+    <button disabled={!file} className="btn btn-outline-primary rounded-pill px-5" onClick={UploadNow}>Upload</button>   
     </div>
     <div className='row m-2'>
       <div className='col-sm-4 col-md-3'>
@@ -163,7 +182,7 @@ export const Datacleaning = () => {
                
             </div>
       </div>
-      <div className='col-sm-4 col-md-3'>
+      <div className='col-sm-4 col-md-3 '>
       <div className="input-group mb-3">
                   <div className="input-group-prepend">
                     <div className="input-group-text">
@@ -178,18 +197,34 @@ export const Datacleaning = () => {
       </div>
     </div>
 
-    <button className="btn btn-outline-primary rounded-pill px-5" onClick={Apply}>Apply</button>    
+    <button disabled={opts.length === 0}  className="btn btn-outline-primary rounded-pill px-5"  onClick={Apply}>Apply</button>    
     
-    <div>{filepath}</div>
-          {filepath ? 
-            <button onClick={handleDownload}>Download</button>         
-          :<div></div>}
+    
 
          <div className='row m-2'>
-         { pathslist? Object.entries(pathslist).map(([key, value]) => {
-                    return <div className='col-sm-4 col-md-3' key={key}> {key}: {value}</div>
-                }):<div></div>  
-            }
+         
+         { locallist.map((item) => {
+              let k = Object.keys(item)[0];
+              let value = item[k];
+       
+          if (k==="entropy") {
+          return <div key={k} className="col-sm-4 col-md-3 py-5 text-center">
+            <h3 className='text-center'>Result of {k}</h3>
+            <div> {value}</div>
+            </div>
+        } 
+        else {
+          return <div key={k} className="col-sm-4 col-md-3 py-5 text-center">
+          <h3 className='text-center'>Result of {k}</h3>
+           <div>
+           <button className='btn btn-success rounded-pill px-5' 
+            onClick={(e)=>handleDownload(e)} 
+            value={value}
+            >{k} Result</button>
+            </div> 
+          </div>
+        }
+        })}
                  
          </div> 
 
