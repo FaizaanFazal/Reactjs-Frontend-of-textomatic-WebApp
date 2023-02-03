@@ -40,7 +40,7 @@ export default function App() {
         
         <Routes>
           <Route  path='/' element={<Home/>} />
-          <Route  path='/adminDashboard' element={<AdminProtectedRoute><AdminDashbaord/></AdminProtectedRoute>} />
+          <Route  path='/adminDashboard' element={<AdminDashbaord/>} />
           <Route  path='/userDashboard' element={<UserDashboard/>} />
           <Route  path='/userLogin' element={<UserLogin/>} />
           <Route  path='/userSignup' element={<UserSignup/>} />
