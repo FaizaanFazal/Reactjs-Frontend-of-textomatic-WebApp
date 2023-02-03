@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { axiosInstance } from '../../config';
+import axios from 'axios';
 
-const home = () => {
+const Home = () => {
+  const [userCount, setUserCount] = useState(0);  
+
+useEffect(()=>{
+  axiosInstance.get('/countusers')
+  .then(res => setUserCount(res.data))
+  .catch(err => console.error(err));
+},[])
   return (
     <div>
        
@@ -33,13 +42,13 @@ const home = () => {
           {/* small box */}
           <div className="small-box bg-info">
             <div className="inner">
-              <h3>150</h3>
+              <h3>{userCount}</h3>
               <p>Total users</p>
             </div>
             <div className="icon">
               <i className="ion ion-bag" />
             </div>
-            <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+            <a href="#" className="small-box-footer">Manage<i className="fas fa-arrow-circle-right" /></a>
           </div>
         </div>
         {/* ./col */}
@@ -110,4 +119,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home

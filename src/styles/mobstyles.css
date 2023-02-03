@@ -46,6 +46,15 @@
     footer .row .col-md-2 {
         margin-top: 8vmin;
     }
+    .pushd{
+        top: -40vmin;
+    }
+}
+
+@media only screen and (max-width: 582px) {
+    .pushd{
+        top: 0;
+    }
 }
 
 /* screen size 375px */

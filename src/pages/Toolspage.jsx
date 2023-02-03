@@ -5,7 +5,7 @@ import Navbar from '../components/navbar/Navbar'
 import Toolsoverview from '../components/tools/Toolsoverview'
 
 
-export default function UserDashboard() {
+export default function Toolspage() {
   return (
     <>
       <header className='navzero'>

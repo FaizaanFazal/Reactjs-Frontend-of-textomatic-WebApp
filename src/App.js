@@ -8,7 +8,7 @@ import { BrowserRouter,
 
 import Home from './pages/Home'
 import AdminDashbaord from './pages/AdminDashbaord'
-import UserDashboard from './pages/UserDashboard'
+import Toolspage from './pages/Toolspage'
 import UserLogin from './pages/UserLogin'
 import UserSignup from './pages/UserSignup'
 import AnalysisPage from './pages/AnalysisPage'
@@ -41,7 +41,7 @@ export default function App() {
         <Routes>
           <Route  path='/' element={<Home/>} />
           <Route  path='/adminDashboard' element={<AdminDashbaord/>} />
-          <Route  path='/userDashboard' element={<UserDashboard/>} />
+          <Route  path='/tools' element={<Toolspage/>} />
           <Route  path='/userLogin' element={<UserLogin/>} />
           <Route  path='/userSignup' element={<UserSignup/>} />
           <Route  path='/datacleaning' element={<Datacleaningpage/>} /> 

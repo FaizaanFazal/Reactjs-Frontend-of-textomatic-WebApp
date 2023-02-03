@@ -62,7 +62,7 @@ export default function Analyzertool() {
                         <input type="checkbox" aria-label="Checkbox for following text input" />
                    </div>
                   </div>
-                  <label  class="form-control" aria-label="Text input with checkbox">samples by week</label>
+                  <label  class="form-control" aria-label="Text input with checkbox">Topic Classification</label>
                
             </div>
       </div>
@@ -73,7 +73,18 @@ export default function Analyzertool() {
                         <input type="checkbox" aria-label="Checkbox for following text input" />
                    </div>
                   </div>
-                  <label  class="form-control" aria-label="Text input with checkbox"> Samples by topic</label>
+                  <label  class="form-control" aria-label="Text input with checkbox"> Urgency detection</label>
+               
+            </div>
+      </div>
+      <div className='col-sm-4 col-md-3'>
+      <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="checkbox" aria-label="Checkbox for following text input" />
+                   </div>
+                  </div>
+                  <label  class="form-control" aria-label="Text input with checkbox"> Intent Categorization</label>
                
             </div>
       </div>
