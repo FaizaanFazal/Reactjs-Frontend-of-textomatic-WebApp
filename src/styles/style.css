@@ -662,3 +662,54 @@ svg {
         color: rgb(20, 20, 20);
         background-color: rgba(128, 128, 128, 0.082);
   }
+
+  .grammar-checker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    font-family: sans-serif;
+    margin-bottom: 40px;
+  }
+  
+  textarea {
+    width: 500px;
+    height: 200px;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+  
+  input[type="file"] {
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+    font-family: sans-serif;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    font-family: sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .output {
+    width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: lightgray;
+    border-radius: 5px;
+  }
+
+
+

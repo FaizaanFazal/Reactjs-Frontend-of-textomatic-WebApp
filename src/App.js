@@ -15,6 +15,7 @@ import AnalysisPage from './pages/AnalysisPage'
 import { useContext } from "react"
 import { AuthContext } from "./context/AuthContext"
 import  Datacleaningpage  from './pages/Datacleaningpage'
+import GrammarChecker from './components/tools/GrammarChecker'
 
 
 export default function App() {
@@ -45,8 +46,9 @@ export default function App() {
           <Route  path='/userLogin' element={<UserLogin/>} />
           <Route  path='/userSignup' element={<UserSignup/>} />
           <Route  path='/datacleaning' element={<Datacleaningpage/>} /> 
-          <Route  path='/analysistool' element={<AnalysisPage/>} />   
-          
+          <Route  path='/analysistool' element={<AnalysisPage/>} />  
+          <Route  path='/grammar' element={<GrammarChecker/>} /> 
+           
         </Routes>
       
       </BrowserRouter>
