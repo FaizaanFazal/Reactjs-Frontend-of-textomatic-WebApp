@@ -14,6 +14,7 @@ export const Datacleaning = () => {
     const [locallist,setLocallist]=useState(pathslist)// to render the above path list by using useEffect
     const [filepath, setFilepath] = useState("");
     const [fileName, setFileName] = useState("");
+     const [isLoading, setIsLoading] = useState(false);
     let p='';
  
 
@@ -64,13 +65,12 @@ export const Datacleaning = () => {
       }
       //upload to serveer
       const Apply = async (e) => {
-      
+        setIsLoading(true);
        opts.forEach((item) => {
           console.log(item)
           console.log("file path is ",filepath)
         
           try {
-          
             axiosInstance.post("/Datacleaning/upload/"+item+"?param1="+ filepath.replace(/\\/g, '/')).then(
               res=>{ p = res.data.toString();
                 console.log("aya"+res.data)
@@ -79,20 +79,19 @@ export const Datacleaning = () => {
             setPathslist(prevList => [...prevList, {  [item]: p }])
           //  setPathslist({ ...pathslist, [item]: p });
           }
-            )
-            
-           
-           
+            )         
           } catch (ex) {
             console.log(ex);
             setFilepath(ex)
           }
-        })
+        });      
+        setIsLoading(false);
        
       };
       
       const handleDownload = async (e) => {
         let downloadpath=e.target.value;
+        
         axios({
           url: 'http://localhost:8081/server/download',
           method: 'GET',
@@ -102,7 +101,8 @@ export const Datacleaning = () => {
           const url = window.URL.createObjectURL(new Blob([response.data]));
           const link = document.createElement('a');
           link.href = url;
-          link.setAttribute('download', 'file.txt');
+          let name= e.target.value.toString() + ".csv"
+          link.setAttribute('download', name);
           document.body.appendChild(link);
           link.click();
         });
@@ -110,14 +110,19 @@ export const Datacleaning = () => {
       };
       useEffect(()=>{
           setLocallist(pathslist)
-      },[pathslist])
+          setIsLoading(false)
+      },[pathslist,isLoading])
 
   return (
     <>
-    <div className='container text-black mb-5 text-center'>
+  {isLoading ? <div className='load'><div>Processing...</div></div> 
+  
+  :<div>
+  <div className='container text-black mb-5 text-center'>
     <br/>
     <br/>
     <br/>
+   
     <ToastContainer />
 
     <h3 className='text-center mt-4 mb-5'>Data Cleaner</h3>
@@ -197,7 +202,7 @@ export const Datacleaning = () => {
       </div>
     </div>
 
-    <button disabled={opts.length === 0}  className="btn btn-outline-primary rounded-pill px-5"  onClick={Apply}>Apply</button>    
+    <button disabled={opts.length === 0 || isLoading===true}  className="btn btn-outline-primary rounded-pill px-5"  onClick={Apply}>Apply</button>    
     
     
 
@@ -220,6 +225,7 @@ export const Datacleaning = () => {
            <button className='btn btn-success rounded-pill px-5' 
             onClick={(e)=>handleDownload(e)} 
             value={value}
+            key={k} 
             >{k} Result</button>
             </div> 
           </div>
@@ -229,9 +235,7 @@ export const Datacleaning = () => {
          </div> 
 
     </div>
-    </div>
-    
-    
+    </div>  
     <div className='container text-black mb-5 text-center'>
     <br/>
     <br/>
@@ -307,7 +311,8 @@ export const Datacleaning = () => {
          </div> 
 
          </div> 
-    
+         </div>
+      }
 
     </>
     

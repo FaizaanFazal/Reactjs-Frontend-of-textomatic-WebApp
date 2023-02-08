@@ -38,7 +38,7 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/userDashboard">TOOLS</Link>
+                <Link className="nav-link" to="/tools">TOOLS</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="#purchaseplan">PLANS</Link>
