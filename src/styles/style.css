@@ -3,7 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-
+body{
+    background-color: #e6e6e6;
+}
 .tool {
     background-color: blue;
     padding: 20px;
@@ -616,13 +618,13 @@ svg {
     top: -60vmin;
   }
   .toolsbox a{
-    margin: none;
+    margin-bottom:5px ;
     text-decoration: none;
-    width: auto;
-    background-color: white;
+    padding: 0;
   }
 
   .toolsbox{
+    background-color: rgb(235, 235, 235);
     color: black;
     border-radius: 10px;
     padding: 10%;
@@ -649,24 +651,22 @@ svg {
   }
   .bordergraylight{
     padding: 5px;
-    border:  rgb(223, 223, 223) 1px solid;
+    border:  rgb(151, 151, 151) 1px solid;
+  }
+  .bggray2{
+    background-color: rgb(218, 218, 218);
   }
   .contentbox{
-    background-color: gray;
+    background-color: rgb(224, 224, 224);
     color: black;
     border: 1px solid rgb(226, 226, 226);
-    margin-bottom: 5px;
+    margin: 0;
+    padding: 0;
     font-weight: bolder;
   }
   .contentbox:hover{
         color: rgb(20, 20, 20);
         background-color: rgba(128, 128, 128, 0.082);
-  }
-
-  .grammar-checker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
   }
   
   h1 {
@@ -704,11 +704,16 @@ svg {
   }
   
   .output {
-    width: 500px;
-    margin-top: 20px;
-    padding: 20px;
     background-color: lightgray;
     border-radius: 5px;
+  }
+  .pos-rt{
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    border-radius: 100%;
+    color: rgb(175, 0, 0);
+    background-color: rgba(135, 6, 240, 0.267);
   }
 
 .load{

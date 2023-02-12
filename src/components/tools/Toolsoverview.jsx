@@ -12,13 +12,13 @@ export default function Toolsoverview() {
     <div className='container-fluid mb-2'>
     <div className='toolscont'>
    
-   <h1 className='text-center text-black p-1'> Tools</h1>
+   <h2 className='text-center text-black p-1'> Tools</h2>
   
-    <div className='toolsbox  row justify-content-center bg-white'>
+    <div className='toolsbox  row justify-content-center'>
         <Link to='/' className='col-md-6 '>
     <div className='contentbox'>
         <div>
-             <div class="card-header bg-white text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
+             <div class="card-header bgcolorgray text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
                 <div class="card-body bgcolorgray">
                  <h5 class="card-title  font-weight-bold" >Grammar Checker</h5></div></div>
     </div>
@@ -27,7 +27,7 @@ export default function Toolsoverview() {
     <Link to='/analysistool' className='col-md-6 '>
     <div className='contentbox'>
         <div>
-             <div class="card-header bg-white text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
+             <div class="card-header bgcolorgray text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
                 <div class="card-body bgcolorgray">
                  <h5 class="card-title font-weight-bold" >Text Analyzer</h5></div></div>
     </div>
@@ -35,7 +35,7 @@ export default function Toolsoverview() {
     <Link to='/datacleaning' className='col-md-6 '>
     <div className='contentbox'>
         <div>
-             <div class="card-header bg-white text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
+             <div class="card-header bgcolorgray text-black"> <i class="fab fa-google fa-4x mx-4"></i></div>
                 <div class="card-body bgcolorgray">
                  <h5 class="card-title font-weight-bold" >Corpus Cleaner</h5></div></div>
     </div>
@@ -43,7 +43,7 @@ export default function Toolsoverview() {
     <Link to='/' className='col-md-6 '>
     <div className='contentbox'>
         <div>
-             <div class="card-header bg-white text-black"> <i class="fab fa-cuttlefish fa-4x mx-4"></i></div>
+             <div class="card-header bgcolorgray text-black"> <i class="fab fa-cuttlefish fa-4x mx-4"></i></div>
                 <div class="card-body bgcolorgray">
                  <h5 class="card-title font-weight-bold" >Corpus Hosting</h5></div></div>
     </div>
@@ -60,7 +60,7 @@ export default function Toolsoverview() {
     <div className='container'>
   
 
-    <div className=' row mb-4 mx-auto bordergraylight'>
+    <div className=' row mb-4 mx-auto bordergraylight bggray2'>
         <div className='col-sm-8 p-4'>
             <h3>Grammar Checker</h3>
             <p className="ml-3">A grammar checker tool is used to help identify and correct grammatical errors in written text. This can include issues such as punctuation errors, subject-verb agreement, and word choice. Some grammar checker tools also provide suggestions for improving sentence structure and readability.</p>
@@ -73,7 +73,7 @@ export default function Toolsoverview() {
      
     </div>
 
-    <div className=' row mb-4 mx-auto bordergraylight'>
+    <div className=' row mb-4 mx-auto bordergraylight bggray2'>
         <div className='col-sm-8 p-4'>
             <h3>Grammar Checker</h3>
             <p className="ml-3">A grammar checker tool is used to help identify and correct grammatical errors in written text. This can include issues such as punctuation errors, subject-verb agreement, and word choice. Some grammar checker tools also provide suggestions for improving sentence structure and readability.</p>
@@ -85,7 +85,7 @@ export default function Toolsoverview() {
         </div>
      
     </div>
-    <div className=' row mb-4 mx-auto bordergraylight'>
+    <div className=' row mb-4 mx-auto bordergraylight bggray2'>
         <div className='col-sm-8 p-4'>
             <h3>Grammar Checker</h3>
             <p className="ml-3">A grammar checker tool is used to help identify and correct grammatical errors in written text. This can include issues such as punctuation errors, subject-verb agreement, and word choice. Some grammar checker tools also provide suggestions for improving sentence structure and readability.</p>
@@ -97,7 +97,7 @@ export default function Toolsoverview() {
         </div>
      
     </div>
-    <div className=' row mb-4 mx-auto bordergraylight'>
+    <div className=' row mb-4 mx-auto bordergraylight bggray2'>
         <div className='col-sm-8 p-4'>
             <h3>Grammar Checker</h3>
             <p className="ml-3">A grammar checker tool is used to help identify and correct grammatical errors in written text. This can include issues such as punctuation errors, subject-verb agreement, and word choice. Some grammar checker tools also provide suggestions for improving sentence structure and readability.</p>

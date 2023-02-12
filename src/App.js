@@ -15,7 +15,7 @@ import AnalysisPage from './pages/AnalysisPage'
 import { useContext } from "react"
 import { AuthContext } from "./context/AuthContext"
 import  Datacleaningpage  from './pages/Datacleaningpage'
-import GrammarChecker from './components/tools/GrammarChecker'
+import GrammarChecker from './pages/Grammarpage'
 import Sentimentanalysis from './components/tools/Sentimentanalysis'
 
 

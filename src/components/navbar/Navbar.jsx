@@ -52,9 +52,9 @@ export default function Navbar() {
              { //conditional redenring here
                !user ? <li className="nav-item dropdown">
                 <span className="dropdown">
-                  <Link to="/userLogin" className="nav-link">  <button className="btn btn-light px-3 py-0 primary-btn">
+                  <Link to="/userLogin" className="nav-link btn btn-light px-3 primary-btn">
                     LOGIN
-                  </button></Link>
+                 </Link>
                 </span>
               </li>:
             <li className="nav-item dropdown">
@@ -65,11 +65,11 @@ export default function Navbar() {
               </div>
             </li>
            }
-            {  !user ?  <li className="nav-item dropdown">
-                <span className="dropdown">
-                  <Link to="userSignup" className="nav-link">  <button className="btn btn-light px-3 py-0 primary-btn">
+            {  !user ?  <li className="nav-item dropdown text-center">
+                <span className="dropdown ">
+                  <Link to="userSignup" className="nav-link btn btn-light px-3  primary-btn">  
                     SIGNUP
-                  </button></Link>
+                  </Link>
                 </span>
               </li> :  
               

@@ -14,7 +14,7 @@ export const Datacleaning = () => {
     const [locallist,setLocallist]=useState(pathslist)// to render the above path list by using useEffect
     const [filepath, setFilepath] = useState("");
     const [fileName, setFileName] = useState("");
-     const [isLoading, setIsLoading] = useState(false);
+     const [isLoading, setIsLoading] = useState(true);
     let p='';
  
 
