@@ -19,6 +19,7 @@ import GrammarChecker from './pages/Grammarpage'
 import Sentimentanalysis from './components/tools/Sentimentanalysis'
 import UploadCorpus from './pages/UploadCorpus'
 import FileManagement from './pages/FileManagement'
+import ProfileUpdate from './pages/ProfileUpdate'
 
 export default function App() {
 
@@ -53,6 +54,7 @@ export default function App() {
           <Route  path='/sentiment' element={<Sentimentanalysis/>} /> 
           <Route  path='/uploadcorpus' element={<UploadCorpus/>} /> 
           <Route  path='/filemanagement' element={<FileManagement/>} /> 
+          <Route  path='/profileupdate' element={<ProfileUpdate/>} /> 
            
         </Routes>
       
