@@ -789,3 +789,89 @@ svg {
     color: #4CAF50;
   }
   
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .col-md-6 {
+    flex-basis: 50%;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .custom-file-input {
+    cursor: pointer;
+  }
+  
+  .custom-file-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  
+  .btn-primary {
+    width: 100%;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+    font-weight: 500;
+  }
+  
+  .table td:last-child {
+    white-space: nowrap;
+  }
+  
+  .table td:last-child button {
+    margin-right: 5px;
+  }
+  
+  .fa-file-pdf,
+  .fa-file-word,
+  .fa-file-excel,
+  .fa-file-powerpoint,
+  .fa-file-alt {
+    color: #007bff;
+  }
+  
+  .fa-download,
+  .fa-trash {
+    color: #dc3545;
+    cursor: pointer;
+  }
+  
+  .fa-download:hover,
+  .fa-trash:hover {
+    color: #b50e1c;
+  }
+  
