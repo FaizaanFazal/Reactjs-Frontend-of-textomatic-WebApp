@@ -733,3 +733,59 @@ svg {
     font-size: 50px;
 }
 
+
+.upload-corpus-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  input[type='file'] {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+  }
+  
+  button[type='submit'] {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  button[type='submit']:hover {
+    background-color: #3e8e41;
+  }
+  
+  .message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4CAF50;
+  }
+  

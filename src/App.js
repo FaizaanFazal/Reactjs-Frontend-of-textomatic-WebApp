@@ -17,7 +17,7 @@ import { AuthContext } from "./context/AuthContext"
 import  Datacleaningpage  from './pages/Datacleaningpage'
 import GrammarChecker from './pages/Grammarpage'
 import Sentimentanalysis from './components/tools/Sentimentanalysis'
-
+import UploadCorpus from './pages/UploadCorpus'
 
 export default function App() {
 
@@ -50,6 +50,7 @@ export default function App() {
           <Route  path='/analysistool' element={<AnalysisPage/>} />  
           <Route  path='/grammar' element={<GrammarChecker/>} /> 
           <Route  path='/sentiment' element={<Sentimentanalysis/>} /> 
+          <Route  path='/uploadcorpus' element={<UploadCorpus/>} /> 
            
         </Routes>
       
