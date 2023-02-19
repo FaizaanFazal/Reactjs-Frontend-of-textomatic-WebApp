@@ -790,7 +790,7 @@ svg {
   }
   
 
-  .container {
+  .container-2 {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -826,7 +826,7 @@ svg {
     text-overflow: ellipsis;
   }
   
-  .btn-primary {
+  .btn-primary-2 {
     width: 100%;
   }
   
@@ -900,7 +900,7 @@ svg {
     border: 1px solid #ced4da;
   }
   
-  button {
+  button{
     margin-top: 20px;
   }
   

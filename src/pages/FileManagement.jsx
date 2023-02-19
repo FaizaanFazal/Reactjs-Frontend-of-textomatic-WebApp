@@ -50,7 +50,7 @@ const FileManagement = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-2">
       <h2>File Management</h2>
       <div className="d-flex justify-content-center row mb-3">
         <div className="col-md-6">

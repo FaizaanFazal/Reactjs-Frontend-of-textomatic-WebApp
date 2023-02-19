@@ -20,6 +20,7 @@ import Sentimentanalysis from './components/tools/Sentimentanalysis'
 import UploadCorpus from './pages/UploadCorpus'
 import FileManagement from './pages/FileManagement'
 import ProfileUpdate from './pages/ProfileUpdate'
+import Dashboard from './pages/Dashboard'
 
 export default function App() {
 
@@ -55,6 +56,7 @@ export default function App() {
           <Route  path='/uploadcorpus' element={<UploadCorpus/>} /> 
           <Route  path='/filemanagement' element={<FileManagement/>} /> 
           <Route  path='/profileupdate' element={<ProfileUpdate/>} /> 
+          <Route  path='/dashboard' element={<Dashboard/>} /> 
            
         </Routes>
       
