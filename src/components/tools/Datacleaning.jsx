@@ -6,6 +6,7 @@ import { axiosInstance } from '../../config';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 export const Datacleaning = () => {
 
     const [file, setFile] = useState();
@@ -241,75 +242,100 @@ export const Datacleaning = () => {
     <br/>
     <br/>
     <ToastContainer />
-
-    <h3 className='text-center mt-4 mb-5'>Techniques</h3>
     
-    <div className='container'>
-  
 
-  <div className=' row mx-auto bordergraylight'>
-      <div className='col-sm-8'>
-          <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>Apply Binary</h3>
-          
-      <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
-        <li>What: Binary encoding is a technique used to convert categorical variables with multiple levels into binary variables. Each level is assigned a binary value (0 or 1) and a new binary variable is created for each level.</li>
-        <li>Why: This can be useful for reducing the dimensionality of a dataset and making it more interpretable.</li>
-        <li>When: Binary encoding is typically used when working with categorical variables that have multiple levels and you want to reduce the dimensionality of the data or make it more interpretable.</li>
-     
+         <div className='containerrr'>
+  <h3 className='text-center mt-4 mb-5 h333'>Techniques</h3>
+
+  <div className='row mx-auto bordergraylight'>
+    <div className='col-sm-8'>
+      <h3 className='technique-heading h333'>Apply Binary</h3>
+      <ul className='technique-description uuul'>
+        <li className='llli'>
+          <span className='technique-bold'>What:</span> Binary encoding is a technique used to convert categorical variables with multiple levels into binary variables. Each level is assigned a binary value (0 or 1) and a new binary variable is created for each level.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>Why:</span> This can be useful for reducing the dimensionality of a dataset and making it more interpretable.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>When:</span> Binary encoding is typically used when working with categorical variables that have multiple levels and you want to reduce the dimensionality of the data or make it more interpretable.
+        </li>
       </ul>
-      </div>
-    
+    </div>
   </div>
 
-  <div className=' row mx-auto bordergraylight'>
-      <div className='col-sm-8'>
-          <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>Entropy</h3>
-          <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
-          <li>What: Entropy encoding is a technique used to encode categorical variables by calculating the entropy (a measure of disorder or randomness) of the variable's levels.</li>
-          <li>Why: Entropy encoding can be useful for reducing the dimensionality of a dataset and making it more interpretable.</li>
-          <li>When: Entropy encoding is typically used when working with categorical variables that have multiple levels and you want to reduce the dimensionality of the data or make it more interpretable.</li>
-          </ul>
-      </div>
+  <div className='row mx-auto bordergraylight'>
+    <div className='col-sm-8'>
+      <h3 className='technique-heading h333'>Entropy</h3>
+      <ul className='technique-description uuul'>
+        <li className='llli'>
+          <span className='technique-bold'>What:</span> Entropy encoding is a technique used to encode categorical variables by calculating the entropy (a measure of disorder or randomness) of the variable's levels.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>Why:</span> Entropy encoding can be useful for reducing the dimensionality of a dataset and making it more interpretable.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>When:</span> Entropy encoding is typically used when working with categorical variables that have multiple levels and you want to reduce the dimensionality of the data or make it more interpretable.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div className='row mx-auto bordergraylight'>
+    <div className='col-sm-8'>
+      <h3 className='technique-heading h333'>TFC</h3>
+      <ul className='technique-description uuul'>
+        <li className='llli'>
+          <span className='technique-bold'>What:</span> TFC is a technique used to convert a set of text documents into numerical values by assigning a weight to each term based on its frequency in the document and the inverse frequency of the term across all documents in the dataset.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>Why:</span> It is commonly used for text classification and information retrieval tasks.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>When:</span> TFC is typically used when working with text data and you want to convert the text data into numerical values for further analysis.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div className='row mx-auto bordergraylight'>
+    <div className='col-sm-8'>
+      <h3 className='technique-heading h333'>LTC</h3>
+      <ul className='technique-description uuul'>
+      <li className='llli'>
+          <span className='technique-bold'>What:</span>LTC is a technique used to extract co-occurrences of terms in a text document. It counts the number of times two terms appear together in a window of a fixed size around a given word.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>Why:</span>LTC can be used for text classification, clustering, and information retrieval tasks.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>When:</span>When: LTC is typically used when working with text data and you want to extract co-occurrences of terms in the text documents.
+        
+        </li>
+      </ul>
      
+    </div>
   </div>
 
-  <div className=' row mx-auto bordergraylight'>
-      <div className='col-sm-8'>
-          <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>TFC</h3>
-          <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
-          <li>What: TFC is a technique used to convert a set of text documents into numerical values by assigning a weight to each term based on its frequency in the document and the inverse frequency of the term across all documents in the dataset.</li>
-          <li>Why: It is commonly used for text classification and information retrieval tasks.</li>
-          <li>When: TFC is typically used when working with text data and you want to convert the text data into numerical values for further analysis.</li>
-          </ul>
-      </div>
-     
+  <div className='row mx-auto bordergraylight'>
+    <div className='col-sm-8'>
+      <h3 className='technique-heading h333'>TFIDF</h3>
+      <ul className='technique-description uuul'>
+      <li className='llli'>
+          <span className='technique-bold'>What:</span>TF-IDF is a technique used to convert a set of text documents into numerical values by assigning a weight to each term based on its frequency in the document and the inverse frequency of the term across all documents in the dataset.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>Why:</span>It is commonly used for text classification, information retrieval, and document similarity tasks.
+        </li>
+        <li className='llli'>
+          <span className='technique-bold'>When:</span>When: TF-IDF is typically used when working with text data and you want to convert the text data into numerical values for further analysis.
+        
+        </li>
+      </ul>
+    </div>
   </div>
 
-  <div className=' row mx-auto bordergraylight'>
-      <div className='col-sm-8'>
-          <h3  style={{textAlign: 'left', margin: '20px', padding: '10px'}}>LTC</h3>
-          <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
-          <li>What: LTC is a technique used to extract co-occurrences of terms in a text document. It counts the number of times two terms appear together in a window of a fixed size around a given word.</li>
-          <li>Why: LTC can be used for text classification, clustering, and information retrieval tasks.</li>
-          <li>When: LTC is typically used when working with text data and you want to extract co-occurrences of terms in the text documents.</li>
-          </ul>
-      </div>
-     
   </div>
-
-  <div className=' row mx-auto bordergraylight'>
-      <div className='col-sm-8'>
-          <h3  style={{textAlign: 'left', margin: '20px', padding: '10px'}}>TFIDF</h3>
-          <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
-        <li>What: TF-IDF is a technique used to convert a set of text documents into numerical values by assigning a weight to each term based on its frequency in the document and the inverse frequency of the term across all documents in the dataset.</li>
-        <li>Why: It is commonly used for text classification, information retrieval, and document similarity tasks.</li>
-        <li>When: TF-IDF is typically used when working with text data and you want to convert the text data into numerical values for further analysis.</li>
-          </ul>
-      </div>
-     
-  </div>
-         </div> 
-
          </div> 
          </div>
       }
