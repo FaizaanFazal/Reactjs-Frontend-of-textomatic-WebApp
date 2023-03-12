@@ -247,7 +247,7 @@ export const Datacleaning = () => {
     <div className='container'>
   
 
-  <div className=' row mx-auto bordergraylight bg-blue'>
+  <div className=' row mx-auto bordergraylight'>
       <div className='col-sm-8'>
           <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>Apply Binary</h3>
           
@@ -261,7 +261,7 @@ export const Datacleaning = () => {
     
   </div>
 
-  <div className=' row mx-auto bordergraylight bg-green'>
+  <div className=' row mx-auto bordergraylight'>
       <div className='col-sm-8'>
           <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>Entropy</h3>
           <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
@@ -273,7 +273,7 @@ export const Datacleaning = () => {
      
   </div>
 
-  <div className=' row mx-auto bordergraylight bg-orange'>
+  <div className=' row mx-auto bordergraylight'>
       <div className='col-sm-8'>
           <h3 style={{textAlign: 'left', margin: '20px', padding: '10px'}}>TFC</h3>
           <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
@@ -285,7 +285,7 @@ export const Datacleaning = () => {
      
   </div>
 
-  <div className=' row mx-auto bordergraylight bg-purple'>
+  <div className=' row mx-auto bordergraylight'>
       <div className='col-sm-8'>
           <h3  style={{textAlign: 'left', margin: '20px', padding: '10px'}}>LTC</h3>
           <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
@@ -297,7 +297,7 @@ export const Datacleaning = () => {
      
   </div>
 
-  <div className=' row mx-auto bordergraylight bg-yellow'>
+  <div className=' row mx-auto bordergraylight'>
       <div className='col-sm-8'>
           <h3  style={{textAlign: 'left', margin: '20px', padding: '10px'}}>TFIDF</h3>
           <ul style={{listStyleType: 'disc', textAlign: 'justify'}}>
