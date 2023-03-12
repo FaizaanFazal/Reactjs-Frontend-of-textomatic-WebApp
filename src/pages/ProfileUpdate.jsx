@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-
 const ProfileUpdate = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
+  const [cnic, setCnic] = useState('');
   const [address, setAddress] = useState('');
 
   const handleSubmit = (e) => {
@@ -15,7 +15,7 @@ const ProfileUpdate = () => {
 
   return (
     <div className="container-1">
-      <h1 className="header">Profile Update</h1>
+      <h1 className="header2">Profile Update</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="firstName">First Name</label>
@@ -58,6 +58,17 @@ const ProfileUpdate = () => {
             id="phoneNumber"
             value={phoneNumber}
             onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="cnic">CNIC</label>
+          <input
+            type="text"
+            className="form-control"
+            id="cnic"
+            value={cnic}
+            onChange={(e) => setCnic(e.target.value)}
             required
           />
         </div>
