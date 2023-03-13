@@ -1,15 +1,55 @@
-import React from 'react'
-import {
-  VictoryChart,
-  VictoryTheme,
-  VictoryGroup,
-  VictoryBar,
-  VictoryAxis,
-  VictoryPie
-} from "victory";
+import React, { useContext, useEffect, useState } from 'react'
+import {VictoryChart,VictoryTheme,VictoryGroup,  VictoryBar,VictoryAxis,  VictoryPie } from "victory";
+import axios from 'axios';
+import { axiosInstance } from '../../config';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Analyzertool() {
+  const [file, setFile] = useState();
+  const [fileName, setFileName] = useState("");
+  const [filepath, setFilepath] = useState("");
+
+  let p='';
+
+  const saveFile = async(e) => {
+    setFile(e.target.files[0]);
+     setFileName(e.target.files[0].name);
+   };
+
+  const UploadNow=async()=>{
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("fileName", fileName);
+    try {
+      const res= await axiosInstance.post("/Datacleaning/upload",formData)
+      p = res.data.toString();
+      p=p.replace(/(\r\n|\n|\r)/gm, "");
+      p=p.replace(/\\/g, '/');
+      console.log("response was :",p);
+      toast('File uploaded succesfully');
+      setFilepath(p)
+
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+  const analyze=async(e)=>{
+    try {
+      axiosInstance.post("/textanalysis/analyze?param1="+ filepath.replace(/\\/g, '/')).then(
+        res=>{ p = res.data.toString();
+          console.log("aya"+res.data)
+          alert(res.data)
+          
+    //  setPathslist({ ...pathslist, [item]: p });
+    }
+      )         
+    } catch (ex) {
+      console.log(ex);
+      setFilepath(ex)
+    }
+  }
   const data = [
     { x: 1, y: 5 },
     { x: 2, y: 17.5 },
@@ -21,16 +61,23 @@ export default function Analyzertool() {
     { x: 7, y: 10 }
   ];
 
+
+
+
+
   return (
     
     <div className='container text-black mb-5'>
     <br/>
     <br/>
     <br/>
+    <ToastContainer />
            <h3 className='text-center mt-4 mb-5'>Text Analysis</h3>
           <div className='bordergraylight text-center'>
               <div>
-              <input type="file" />
+              <input type="file" onChange={saveFile} />
+              <button disabled={!file} className="btn btn-outline-primary rounded-pill px-5" onClick={UploadNow}>Upload</button>   
+   
             
     <div className='row m-2'>
       <div className='col-sm-4 col-md-3'>
@@ -92,6 +139,8 @@ export default function Analyzertool() {
     <button>Analyze </button>
 
               </div>
+
+              <div> Output here</div>
                {/* data visualization  here */}
               <div className='row text-center'>
                

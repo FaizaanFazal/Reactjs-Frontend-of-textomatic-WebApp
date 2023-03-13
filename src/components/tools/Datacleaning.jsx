@@ -14,7 +14,7 @@ export const Datacleaning = () => {
     const [locallist,setLocallist]=useState(pathslist)// to render the above path list by using useEffect
     const [filepath, setFilepath] = useState("");
     const [fileName, setFileName] = useState("");
-     const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
     let p='';
  
 
@@ -49,8 +49,6 @@ export const Datacleaning = () => {
     const saveFile = async(e) => {
        setFile(e.target.files[0]);
         setFileName(e.target.files[0].name);
-       
-      
       };
       const handleCheckboxChange=(e)=>{
             if(e.target.checked){
