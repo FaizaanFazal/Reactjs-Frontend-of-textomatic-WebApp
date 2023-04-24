@@ -15,7 +15,7 @@ export default function Toolsoverview() {
    <h2 className='text-center text-black p-1'> Tools</h2>
   
     <div className='toolsbox  row justify-content-center'>
-        <Link to='/' className='col-md-6 '>
+        <Link to='/grammar' className='col-md-6 '>
     <div className='contentbox'>
         <div>
              <div class="card-header bgcolorgray text-black"> <i className='fas fa-spell-check fa-4x mx-4 my-auto'></i></div>
