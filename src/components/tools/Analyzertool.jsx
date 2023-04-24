@@ -10,6 +10,26 @@ export default function Analyzertool() {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
   const [filepath, setFilepath] = useState("");
+  const [result1, setResult1] = useState(null);
+  const [result2, setResult2] = useState(null);
+  const [value, setValue] = useState(0.5); // The value from -1 to 1
+
+
+  // Calculate the width and color of the filled part of the bar based on the value
+  const updatevalue = () => {
+    // Example: Update the value with a random number from -1 to 1
+    const newValue = parseFloat(result1 * 50 +50);
+    setValue(newValue);
+  };
+  const filledWidth = `${result1 * 50 +50}%`; // Width in percentage
+  let filledColor;
+  if (value > 50) {
+    filledColor = 'green';
+  } else if (value < 50) {
+    filledColor = 'red';
+  } else {
+    filledColor = 'yellow';
+  }
 
   let p='';
 
@@ -37,32 +57,21 @@ export default function Analyzertool() {
   }
   const analyze=async(e)=>{
     try {
-      axiosInstance.post("/textanalysis/analyze?param1="+ filepath.replace(/\\/g, '/')).then(
-        res=>{ p = res.data.toString();
-          console.log("aya"+res.data)
-          alert(res.data)
-          
-    //  setPathslist({ ...pathslist, [item]: p });
-    }
-      )         
+      axiosInstance.post("/textanalysis/analyze?param1="+ filepath.replace(/\\/g, '/'))
+      .then(response => {
+        const [result1, result2] = response.data.split('\r\n');
+        // Update state variables with the received results
+        console.log(result1)
+        setResult1(Number(result1).toFixed(4));
+        setResult2(result2.trim());
+        updatevalue();
+      })   
     } catch (ex) {
       console.log(ex);
-      setFilepath(ex)
+      setFilepath(ex) 
     }
   }
-  const data = [
-    { x: 1, y: 5 },
-    { x: 2, y: 17.5 },
-    { x: 3, y: 30 },
-    { x: 4, y: 35 },
-    { x: 5, y: 23 },
-    { x: 4, y: 8 },
-    { x: 6, y: 4 },
-    { x: 7, y: 10 }
-  ];
-
-
-
+  
 
 
   return (
@@ -79,7 +88,7 @@ export default function Analyzertool() {
               <button disabled={!file} className="btn btn-outline-primary rounded-pill px-5" onClick={UploadNow}>Upload</button>   
    
             
-    <div className='row m-2'>
+    {/* <div className='row m-2'>
       <div className='col-sm-4 col-md-3'>
       <div class="input-group mb-3">
                   <div class="input-group-prepend">
@@ -135,14 +144,57 @@ export default function Analyzertool() {
                
             </div>
       </div>
-    </div>
-    <button>Analyze </button>
+    </div> */}
+    <br/>
+    <button onClick={analyze}>Analyze </button>
+ </div>
+ <br/>
+ 
+     {result1 && (
+        <div >
+        <div className='w-50 mx-auto'>
+        <h2>Sentiment</h2>
+        <div
+        style={{
+          width: '100%',
+          height: '20px',
+          backgroundColor: 'lightgray',
+          position: 'relative',
+          borderRadius:'25px',
+        }}
+      >
+        <div
+          style={{
+            width: filledWidth,
+            height: '100%',
+            backgroundColor: filledColor,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white',
+            fontWeight: 'bolder',
+            borderRadius:'25px',
+          }}
+        >{result1}</div>
+      
+      </div>
+      </div>
+        </div>
+      )}
 
-              </div>
+      {result2 && (
+        <div>
+          <h2>Category</h2>
+          <p>{result2}</p>
+        </div>
+        
+      )}
 
-              <div> Output here</div>
                {/* data visualization  here */}
-              <div className='row text-center'>
+              {/* <div className='row text-center'>
                
                  
                   <div className='col-sm-6 mx-auto'>
@@ -221,8 +273,7 @@ export default function Analyzertool() {
 />
     
     </div>
-              </div>
-              
+              </div> */}       
           </div>
           <br></br>
     </div>
