@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 export default function Analyzertool() {
   const [file, setFile] = useState();
   const [fileName, setFileName] = useState("");
@@ -13,12 +14,13 @@ export default function Analyzertool() {
   const [result1, setResult1] = useState(null);
   const [result2, setResult2] = useState(null);
   const [value, setValue] = useState(0.5); // The value from -1 to 1
+  const [isLoading, setIsLoading] = useState(false);
 
 
   // Calculate the width and color of the filled part of the bar based on the value
   const updatevalue = () => {
     // Example: Update the value with a random number from -1 to 1
-    const newValue = parseFloat(result1 * 50 +50);
+    var newValue = Number(result1) * 50 +50;
     setValue(newValue);
   };
   const filledWidth = `${result1 * 50 +50}%`; // Width in percentage
@@ -56,6 +58,8 @@ export default function Analyzertool() {
     }
   }
   const analyze=async(e)=>{
+    setResult1(null);
+    setIsLoading(true);
     try {
       axiosInstance.post("/textanalysis/analyze?param1="+ filepath.replace(/\\/g, '/'))
       .then(response => {
@@ -65,11 +69,14 @@ export default function Analyzertool() {
         setResult1(Number(result1).toFixed(4));
         setResult2(result2.trim());
         updatevalue();
+        setIsLoading(false);
       })   
     } catch (ex) {
       console.log(ex);
       setFilepath(ex) 
+      setIsLoading(false);
     }
+  
   }
   
 
@@ -77,6 +84,12 @@ export default function Analyzertool() {
   return (
     
     <div className='container text-black mb-5'>
+    {isLoading && (
+        <div  className='loadingback'>
+          {/* Render your loading spinner or message here */}
+          <div className="Loadingspinner"></div>
+        </div>
+      )}
     <br/>
     <br/>
     <br/>
@@ -192,6 +205,7 @@ export default function Analyzertool() {
         </div>
         
       )}
+      
 
                {/* data visualization  here */}
               {/* <div className='row text-center'>

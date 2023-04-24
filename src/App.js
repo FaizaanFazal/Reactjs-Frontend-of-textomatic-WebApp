@@ -1,6 +1,7 @@
 import React from 'react'
 import './styles/style.css'
 import './styles/mobstyles.css'
+import './styles/spinner.css'
 import { BrowserRouter,
   Routes,
   Route,
